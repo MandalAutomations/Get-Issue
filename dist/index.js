@@ -9863,6 +9863,7 @@ __nccwpck_require__.r(__webpack_exports__);
 const token = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("Token");
 const repoName = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("RepoName");
 const ownerName = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("OwnerName");
+const labelName = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("LabelName");
 const octokit = (0,_actions_github__WEBPACK_IMPORTED_MODULE_0__.getOctokit)(token);
 
 const getAllIssues = async () => {
@@ -9871,14 +9872,13 @@ const getAllIssues = async () => {
     return octokit.request(url, {
         owner: ownerName,
         repo: repoName,
-        labels: "response"
+        labels: labelName
     })
 }
 
 const run = async () => {
-    console.log("Running");
     const issues = await getAllIssues();
-    console.log(issues);
+    console.log(issues.data);
 }
 
 run();
