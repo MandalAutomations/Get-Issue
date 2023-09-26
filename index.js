@@ -4,6 +4,7 @@ import { getInput, setFailed } from "@actions/core";
 const token = getInput("Token");
 const repoName = getInput("RepoName");
 const ownerName = getInput("OwnerName");
+const labelName = getInput("LabelName");
 const octokit = getOctokit(token);
 
 export const getAllIssues = async () => {
@@ -12,7 +13,7 @@ export const getAllIssues = async () => {
     return octokit.request(url, {
         owner: ownerName,
         repo: repoName,
-        labels: "response"
+        labels: labelName
     })
 }
 

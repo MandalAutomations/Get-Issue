@@ -15,6 +15,10 @@ inputs:
   OwnerName:
     description: "This is the name of the owner of the repository"
     required: true
+  
+  LabelName:
+      description: "Issue Label"
+      required: true
 
   Token:
     description: "Pat Token"
