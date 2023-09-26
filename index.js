@@ -18,7 +18,6 @@ export const getAllIssues = async () => {
 }
 
 const run = async () => {
-    console.log("Running");
     const issues = await getAllIssues();
     console.log(issues.data);
 }
